@@ -71,11 +71,13 @@ let arrayCircle = [];
 
 // Crear 10 círculos
 for(let i = 0; i < 10; i++){
-    let randomX = Math.random() * window_width;
-    let randomY = Math.random() * window_height;
     let randomRadius = Math.floor(Math.random()*100 + 30);
+    let randomX = Math.random() * (window_width - 2 * randomRadius)+ randomRadius;
+    let randomY = Math.random() * (window_height - 2 * randomRadius)+ randomRadius;
+    
+    
 
-    let miCirculo = new Circle(randomX, randomY, randomRadius, 'blue', i + 1, 1);
+    let miCirculo = new Circle(randomX , randomY, randomRadius, 'blue', i + 1, 1);
     // Agregar el objeto al array
     arrayCircle.push(miCirculo);
 }
